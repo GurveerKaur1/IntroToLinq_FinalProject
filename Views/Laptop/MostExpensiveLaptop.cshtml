@@ -1,0 +1,14 @@
+﻿@model List<Laptop>
+
+<h1> Most Expensive Laptops</h1>
+<ul>
+    @foreach (Laptop m in Model)
+    {
+        @if (m == Model.Last() || m == Model[Model.Count - 2])
+        {
+
+            <li>Name : @m.ModelName , Brand : @m.Brand.Name, PriceInDollars : @m.PriceInDollars , Year : @m.YearOfMake, Type : @m.TypeOfLaptop, Quantity in stock : @m.QuantityInTheStock</li>
+        }
+
+    }
+</ul>

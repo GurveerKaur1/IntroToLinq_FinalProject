@@ -1,0 +1,20 @@
+﻿@model Brand
+
+
+<h1>@Model.Name</h1>
+
+@foreach(Laptop l in Model.Laptops)
+{
+    <li>@l.ModelName</li>
+}
+  
+
+<form asp-action="Sort" method="post">
+<select id = "viewby">
+            <option>Year</option>
+            <option>Price</option>
+  </select>
+    <input type="hidden" name="secret" value="Special note that cannot be seen" />
+    <input type="Submit" value="Submit" />
+</form>
+

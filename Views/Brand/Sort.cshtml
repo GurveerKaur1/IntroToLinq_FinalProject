@@ -1,0 +1,11 @@
+﻿@model List<Laptop>
+
+<h1> Most Expensive Laptops</h1>
+<ul>
+    @foreach (Laptop m in Model)
+    {
+        <ol>
+      <li> @m.ModelName</li>
+      </ol>
+    }
+</ul>

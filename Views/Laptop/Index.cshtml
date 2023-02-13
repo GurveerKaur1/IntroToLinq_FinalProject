@@ -1,0 +1,67 @@
+﻿@model IEnumerable<IntroToLinq_FinalProject.Models.Laptop>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.ModelName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PriceInDollars)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.YearOfMake)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TypeOfLaptop)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QuantityInTheStock)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModelName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PriceInDollars)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.YearOfMake)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeOfLaptop)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QuantityInTheStock)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div>@ViewBag.Message</div>
+}
+

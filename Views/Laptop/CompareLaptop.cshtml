@@ -1,0 +1,53 @@
+﻿@model IntroToLinq_FinalProject.Models.ViewModel.CompareLaptopVM
+
+@if(Model.laptop2 != null && Model.laptop3 != null)
+{
+    <div>
+        <h3> Model Name </h3>: @Model.laptop2.ModelName>
+        <h3>  Model Name </h3>: @Model.laptop3.ModelName
+    </div>
+
+    <div>
+        <h3>
+            Price </h3>: @Model.laptop2.PriceInDollars
+        <h3> Price </h3>: @Model.laptop3.PriceInDollars
+    </div>
+
+    <div>
+        <h3>
+            Brand Name
+        </h3>: @Model.laptop2.Brand.Name
+        <h3> Brand Name</h3> : @Model.laptop3.Brand.Name
+    </div>
+    <div>
+        <h3> Type </h3>: @Model.laptop2.TypeOfLaptop
+        <h3>Type</h3> : @Model.laptop3.TypeOfLaptop
+    </div>
+    <div>
+        <h3> Price </h3>: @Model.laptop2.PriceInDollars
+        <h3> Price </h3>: @Model.laptop3.PriceInDollars
+    </div>
+    <div>
+        <h3>
+            Year of make </h3>: @Model.laptop2.YearOfMake
+        <h3> Year of make </h3>: @Model.laptop3.YearOfMake
+    </div>
+}
+<form asp-action="CompareLaptop" method="post">
+    <div>
+        <select asp-for="LaptopId1" asp-items="Model.Laptop1"></select>
+    </div>
+    <div>
+        <select asp-for="LaptopId2" asp-items="Model.Laptop1"></select>
+    </div>
+    @* <div>
+    <input asp-for="Rating" placeholder="Rating" />
+    </div*@>
+    @*<div>
+    <label asp-for="Rating" />
+    <input asp-for="Pay" />
+    </div>*@
+    <input type="hidden" name="secret" value="Special note that cannot be seen" />
+    <input type="Submit" value="Submit" />
+</form>
+

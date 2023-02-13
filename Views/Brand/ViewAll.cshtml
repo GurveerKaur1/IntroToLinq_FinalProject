@@ -1,0 +1,28 @@
+﻿@model IntroToLinq_FinalProject.Models.ViewModel.ViewAllVM
+
+@if (Model.brand2 != null)
+{
+    <div>
+        <h3> Model Name </h3>: @Model.brand2.Laptop.ModelName>
+       
+    </div>
+
+  
+    
+}
+<form asp-action="ViewAll" method="post">
+    <div>
+        <select asp-for="BrandId1" asp-items="Model.Brand1"></select>
+      
+    </div>
+   
+    @* <div>
+    <input asp-for="Rating" placeholder="Rating" />
+    </div*@>
+    @*<div>
+    <label asp-for="Rating" />
+    <input asp-for="Pay" />
+    </div>*@
+    <input type="hidden" name="secret" value="Special note that cannot be seen" />
+    <input type="Submit" value="Submit" />
+</form>
